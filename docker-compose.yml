@@ -9,8 +9,8 @@ services:
       - "80"
     networks:
       piotrzur_net:
-        - aliases:
-            - millionaire
+        aliases:
+          - millionaire
 networks:
   piotrzur_net:
     external: true
