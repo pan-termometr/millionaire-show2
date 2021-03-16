@@ -5,6 +5,7 @@ pipeline {
             steps {
                 script {
                     sh 'mkdir -p /srv/maciejbadziak/millionaire-show/'
+                    sh 'touch /srv/maciejbadziak/millionaire-show/docker-compose.yml'
                     sh 'docker-compose -f /srv/maciejbadziak/millionaire-show/docker-compose.yml down'
                     sh 'maven clean package'
                     sh 'rsync ./target/millionaire-show-2.4.1.jar /srv/maciejbadziak/millionaire-show/millionaire-show.jar'
