@@ -6,9 +6,11 @@ services:
       dockerfile: Dockerfile
     restart: always
     ports:
-      - "8080"
+      - "80"
     networks:
-      - piotrzur_net
+      piotrzur_net:
+        - aliases:
+            - millionaire
 networks:
   piotrzur_net:
     external: true
