@@ -1,0 +1,14 @@
+version: "2"
+services:
+  millionaire:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "8080"
+    networks:
+      - piotrzur_net
+networks:
+  piotrzur_net:
+    external: true
