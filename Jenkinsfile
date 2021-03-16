@@ -4,9 +4,9 @@ pipeline {
         stage('Build and run backend') {
             steps {
                 script {
+                    sh 'mkdir -p /srv/maciejbadziak/millionaire-show/'
                     sh 'docker-compose -f /srv/maciejbadziak/millionaire-show/docker-compose.yml down'
                     sh 'maven clean package'
-                    sh 'mkdir -p /srv/maciejbadziak/millionaire-show/'
                     sh 'rsync ./target/millionaire-show-2.4.1.jar /srv/maciejbadziak/millionaire-show/millionaire-show.jar'
                     sh 'rsync ./Dockerfile /srv/maciejbadziak/millionaire-show/Dockerfile'
                     sh 'rsync ./docker-compose.yml /srv/maciejbadziak/millionaire-show/docker-compose.yml'
