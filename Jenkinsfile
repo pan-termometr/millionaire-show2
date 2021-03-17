@@ -10,6 +10,7 @@ pipeline {
                     sh 'rsync ./target/millionaire-show-2.4.1.jar /srv/maciejbadziak/millionaire-show/millionaire-show.jar'
                     sh 'rsync ./Dockerfile /srv/maciejbadziak/millionaire-show/Dockerfile'
                     sh 'rsync ./docker-compose.yml /srv/maciejbadziak/millionaire-show/docker-compose.yml'
+                    sh 'rsync ./src/main/resources/millionaire-ee3574c78394.json /srv/maciejbadziak/millionaire-show/millionaire-ee3574c78394.json'
                     sh 'docker-compose -f /srv/maciejbadziak/millionaire-show/docker-compose.yml build'
                     sh 'docker-compose -f /srv/maciejbadziak/millionaire-show/docker-compose.yml up -d'
                 }

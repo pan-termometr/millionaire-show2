@@ -7,6 +7,8 @@ services:
     restart: always
     ports:
       - "80"
+    volumes:
+      - /srv/maciejbadziak/millionaire-show/millionaire-ee3574c78394.json:/usr/share/millionaire-ee3574c78394.json
     networks:
       piotrzur_net:
         aliases:
