@@ -5,6 +5,8 @@ services:
       context: ./
       dockerfile: Dockerfile
     restart: always
+    hostname: millionaire
+    container_name: millionaire
     ports:
       - "80"
     volumes:
